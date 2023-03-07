@@ -1,0 +1,267 @@
+// lear
+// Calculator App
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+// Colors
+// Theme 1
+$veryLightBlue: hsl(225, 21%, 49%);
+$lightBlue: hsl(222, 26%, 31%);
+$mediumBlue: hsl(223, 31%, 20%);
+$darkBlue: hsl(224, 36%, 15%);
+$lightRed: hsl(6, 63%, 50%);
+$darkRed: hsl(6, 70%, 34%);
+$lightGray: hsl(30, 25%, 89%);
+$mediumGray: hsl(28, 16%, 65%);
+$lightColor: #f8f9fa;
+
+// Theme 2
+$lightGray2: hsl(0, 0%, 90%);
+$grayishRed: hsl(0, 5%, 81%);
+$veryLightGray: hsl(0, 0%, 93%);
+$darkCyan: hsl(185, 42%, 37%);
+$veryDarkCyan: hsl(185, 58%, 25%);
+$lightOrange: hsl(25, 98%, 40%);
+$darkOrange: hsl(25, 99%, 27%);
+$lightGrayishYellow: hsl(45, 7%, 89%);
+$darkGrayishOrange: hsl(35, 11%, 61%);
+
+// Theme 3
+$lightViolet: hsl(281, 89%, 26%);
+$mediumViolet: hsl(268, 47%, 21%);
+$mediumDarkViolet: hsl(268, 71%, 12%);
+$darkViolet: hsl(268, 75%, 9%);
+$lightMagenta: hsl(285, 91%, 52%);
+$darkMagenta: hsl(290, 70%, 36%);
+$lightCyan: hsl(177, 92%, 70%);
+$mediumCyan: hsl(176, 100%, 44%);
+$lightYellow: hsl(52, 100%, 62%);
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+// Theme 1
+.theme-1 {
+  background-color: $lightBlue;
+
+  .title,
+  .theme-name {
+    color: $lightColor;
+  }
+
+  .theme-box,
+  .math-btns {
+    background-color: $mediumBlue;
+  }
+
+  .result {
+    background-color: $darkBlue;
+    color: $lightColor;
+  }
+
+  .btn {
+    color: $lightBlue;
+    background-color: $lightGray;
+    box-shadow: 0 0.2rem 0 $mediumGray;
+  }
+
+  .reset-btn,
+  .del-btn {
+    background-color: $veryLightBlue;
+    color: $lightColor;
+    box-shadow: 0 0.2rem 0 $lightBlue;
+  }
+
+  .equal-btn {
+    background-color: $lightRed;
+    color: $lightColor;
+    box-shadow: 0 0.2rem 0 $darkRed;
+  }
+}
+
+// Theme 2
+.theme-2 {
+  background-color: $lightGray2;
+
+  .theme-box,
+  .math-btns {
+    background-color: $grayishRed;
+  }
+
+  .result {
+    background-color: $veryLightGray;
+    color: $darkBlue;
+  }
+
+  .btn {
+    color: $darkBlue;
+    background-color: $lightGrayishYellow;
+    box-shadow: 0 0.2rem 0 $darkGrayishOrange;
+  }
+
+  .reset-btn,
+  .del-btn {
+    color: $lightColor;
+    background-color: $darkCyan;
+    box-shadow: 0 0.2rem 0 $veryDarkCyan;
+  }
+
+  .equal-btn {
+    color: $lightColor;
+    background-color: $lightOrange;
+    box-shadow: 0 0.2rem 0 $darkOrange;
+  }
+}
+
+// Theme 3
+.theme-3 {
+  background-color: $darkViolet;
+
+  .title,
+  .theme-name,
+  .result,
+  .btn {
+    color: $lightYellow;
+  }
+
+  .theme-box,
+  .math-btns,
+  .result {
+    background-color: $mediumDarkViolet;
+  }
+
+  .btn {
+    background-color: $mediumViolet;
+    box-shadow: 0 0.2rem 0 $lightViolet;
+  }
+
+  .reset-btn,
+  .del-btn {
+    background-color: $darkMagenta;
+    box-shadow: 0 0.2rem 0 $lightMagenta;
+    color: $lightColor;
+  }
+
+  .equal-btn {
+    background-color: $lightCyan;
+    box-shadow: 0 0.2rem 0 $mediumCyan;
+    color: $darkBlue;
+  }
+}
+
+// Container
+.container {
+  display: flex;
+  flex-direction: column;
+  width: min(450px, 90vw);
+  gap: 1rem;
+
+  // About Section
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .theme-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .theme-name {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+      }
+
+      .theme-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70px;
+        padding: 0.25rem 0.5rem;
+        border-radius: 30px;
+
+        .theme {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          display: grid;
+          place-content: center;
+          font-size: 1.1rem;
+          color: $lightRed;
+
+          &:hover {
+            filter: brightness(120%);
+          }
+
+          &.hidden-theme {
+            opacity: 0;
+          }
+
+          &.third-theme {
+            color: $lightCyan;
+          }
+        }
+      }
+    }
+  }
+
+  // Result Section
+  .result {
+    text-align: right;
+    padding: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 2.5rem;
+  }
+
+  // Buttons Section
+  .math-btns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1.5rem;
+    gap: 1.5rem;
+    border-radius: 0.5rem;
+
+    .btn {
+      padding: 0.5rem;
+      font-size: 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(120%);
+      }
+    }
+
+    .reset-btn {
+      grid-column: span 2;
+      font-size: 1.5rem;
+    }
+
+    .del-btn {
+      font-size: 1.5rem;
+    }
+
+    .equal-btn {
+      grid-column: span 2;
+    }
+  }
+}
+
+// For Smaller Devices
+@media screen and (max-width: 500px) {
+  .math-btns {
+    padding: 1rem !important;
+    gap: 1rem !important;
+  }
+}

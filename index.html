@@ -1,0 +1,80 @@
+<!-- lear -->
+<!-- Calculator App -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator App</title>
+  </head>
+  <body class="theme-1">
+    <!-- Container -->
+    <div class="container">
+      <!-- About Section -->
+      <div class="about">
+        <h1 class="title">calc</h1>
+        <div class="theme-section">
+          <h2 class="theme-name">THEME</h2>
+          <div class="theme-box">
+            <button class="theme first-theme">
+              <i class="fa fa-circle"></i>
+            </button>
+            <button class="theme hidden-theme second-theme">
+              <i class="fa fa-circle"></i>
+            </button>
+            <button class="theme hidden-theme third-theme">
+              <i class="fa fa-circle"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Section -->
+      <input type="text" class="result" placeholder="0" disabled />
+
+      <!-- Buttons Section -->
+      <div class="math-btns">
+        <button class="btn number-btn">7</button>
+        <button class="btn number-btn">8</button>
+        <button class="btn number-btn">9</button>
+        <button class="btn del-btn">DEL</button>
+        <button class="btn number-btn">4</button>
+        <button class="btn number-btn">5</button>
+        <button class="btn number-btn">6</button>
+        <button class="btn text-btn">+</button>
+        <button class="btn number-btn">1</button>
+        <button class="btn number-btn">2</button>
+        <button class="btn number-btn">3</button>
+        <button class="btn text-btn">-</button>
+        <button class="btn text-btn">.</button>
+        <button class="btn number-btn">0</button>
+        <button class="btn text-btn">/</button>
+        <button class="btn text-btn">*</button>
+        <button class="btn reset-btn">RESET</button>
+        <button class="btn equal-btn">=</button>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <noscript>You need enabled Javascript to run this app!</noscript>
+    <script src="main.js"></script>
+  </body>
+</html>
